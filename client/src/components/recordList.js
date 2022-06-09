@@ -56,7 +56,7 @@ export default function RecordList() {
    setRecords(newRecords);
  }
  
- // This method will map out the records on the table
+ // This method will map out the records
  function recordList() {
    return records.map((record) => {
      return (
@@ -69,7 +69,7 @@ export default function RecordList() {
    });
  }
  
- // This following section will display the table with the records of individuals.
+ // This following section will display the list of majors.
  return (
    <div align='center'>
      <h1>Majors</h1>
