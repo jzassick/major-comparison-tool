@@ -2,24 +2,25 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
  
 const Record = (props) => (
- <tr>
-   <td>{props.record.name}</td>
-   <td>{props.record.category}</td>
-   <td>{props.record.description}</td>
-   <td>{props.record.skills}</td>
-   <td>{props.record.classes}</td>
-   <td>{props.record.careers}</td>
-   <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
-     <button className="btn btn-link"
-       onClick={() => {
-         props.deleteRecord(props.record._id);
-       }}
-     >
-       Delete
-     </button>
-   </td>
- </tr>
+  <p>
+    <p>Name: {props.record.name}</p>
+    <p>Category: {props.record.category}</p>
+    <p>Description: {props.record.description}</p>
+    <p>Skills: {props.record.skills}</p>
+    <p>Classes: {props.record.classes}</p>
+    <p>Careers: {props.record.careers}</p>
+    <p>
+      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
+      <button className="btn btn-link"
+        onClick={() => {
+          props.deleteRecord(props.record._id);
+        }}
+      >
+      Delete
+      </button>
+    </p>
+    <hr></hr>
+  </p>
 );
  
 export default function RecordList() {
@@ -70,22 +71,10 @@ export default function RecordList() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div>
-     <h3>Record List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
-       <thead>
-         <tr>
-           <th>Name</th>
-           <th>Category</th>
-           <th>Description</th>
-           <th>Skills</th>
-           <th>Classes</th>
-           <th>Careers</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>{recordList()}</tbody>
-     </table>
+   <div align='center'>
+     <h1>Majors</h1>
+     <hr></hr>
+     <p>{recordList()}</p>
    </div>
  );
 }
