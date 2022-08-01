@@ -68,11 +68,27 @@ export default function RecordList() {
      );
    });
  }
+
+ // This method will fill in the major select drop down box
+ function recordSelect() {
+   return records.map((record) => {
+     return (
+       <option>
+         {record.name}
+       </option>
+     );
+   })
+ }
  
  // This following section will display the list of majors.
  return (
    <div align='center'>
-     <h1>Majors</h1>
+     <h5>
+       <label for="majors">Select a major:</label>&nbsp;&nbsp;
+       <select name="majors" id="majors">
+         {recordSelect()}
+       </select>
+     </h5>
      <hr></hr>
      <p>{recordList()}</p>
    </div>
